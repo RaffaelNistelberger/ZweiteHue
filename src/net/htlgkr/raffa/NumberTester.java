@@ -20,20 +20,24 @@ public class NumberTester {
 
     String fileName;
 
+    private NumberTest oddEvenTester;
+    private NumberTest primeTester;
+    private NumberTest palindromeTester;
+
     public NumberTester(String fileName) {
         this.fileName = fileName;
     }
 
     public void setOddEvenTester(NumberTest oddTest) {
-
+        this.oddEvenTester = oddTest;
     }
 
     public void setPrimeTester(NumberTest primeTester) {
-
+        this.primeTester = primeTester;
     }
 
     public void setPalindromeTester(NumberTest palindromeTester) {
-
+        this.palindromeTester = palindromeTester;
     }
 
     public void testFile() {

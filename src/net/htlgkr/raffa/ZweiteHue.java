@@ -22,6 +22,7 @@ public class ZweiteHue {
 
         NumberTester nt = new NumberTester("test.txt");
         nt.testFile();
+
     }
 
 }
