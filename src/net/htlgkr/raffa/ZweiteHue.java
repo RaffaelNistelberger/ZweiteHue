@@ -18,7 +18,7 @@ public class ZweiteHue {
         // TODO code application logic here
         HalloJavamitForEach h = new HalloJavamitForEach();
         h.init();
-        h.test();
+        h.beispiel2();
     }
 
 }

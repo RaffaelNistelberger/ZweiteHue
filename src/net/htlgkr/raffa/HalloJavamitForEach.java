@@ -25,7 +25,7 @@ public class HalloJavamitForEach {
         list.add("Bar");
     }
 
-    public void test() {
+    public void beispiel2() {
         //Normale Ausgabe einer Liste
         for (String s : list) {
             System.out.println(s);
