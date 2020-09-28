@@ -16,6 +16,8 @@ public class ZweiteHue {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        HalloJavamitForEach h = new HalloJavamitForEach();
+
     }
 
 }
