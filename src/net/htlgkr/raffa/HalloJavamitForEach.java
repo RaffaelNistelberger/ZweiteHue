@@ -19,12 +19,18 @@ public class HalloJavamitForEach {
     public HalloJavamitForEach() {
     }
 
+    public void init() {
+        list.add("Foo");
+        list.add("Bar");
+    }
+
     public void test() {
         //Normale Ausgabe einer Liste
         for (String s : list) {
             System.out.println(s);
         }
-        //ForEach() von Interface Liste 
+        //ForEach() von Interface Liste
+        list.forEach((String s) -> System.out.println(s));
     }
 
 }
