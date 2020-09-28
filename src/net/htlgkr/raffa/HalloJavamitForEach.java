@@ -7,6 +7,7 @@ package net.htlgkr.raffa;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 /**
  *
@@ -29,8 +30,19 @@ public class HalloJavamitForEach {
         for (String s : list) {
             System.out.println(s);
         }
+        System.out.println("NEW LINE");
+
         //ForEach() von Interface Liste
         list.forEach((String s) -> System.out.println(s));
+        System.out.println("NEW LINE");
+
+        //Consumer Interface
+        Consumer<String> consumer = (String s) -> System.out.println(s);
+        list.forEach(consumer);
+        System.out.println("NEW LINE");
+
+        //LambaExpression mit Methoden-Referenz
+        list.forEach(System.out::println);
     }
 
 }
