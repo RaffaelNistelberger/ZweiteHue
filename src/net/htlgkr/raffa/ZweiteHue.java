@@ -23,6 +23,30 @@ public class ZweiteHue {
         NumberTester nt = new NumberTester("test.txt");
         nt.testFile();
 
+        nt.setOddEvenTester((n) -> {
+
+            if (n % 2 == 0) {
+                return true;
+            } else {
+                return false;
+            }
+
+        });
+        nt.setPrimeTester((n) -> {
+
+            for (int i = 2; i < n; i++) {
+                int a = n % i;
+                if (a == 0) {
+                    return false;
+                }
+            }
+            return true;
+
+        });
+        nt.setPalindromeTester((n) -> {
+
+        });
+
     }
 
 }
