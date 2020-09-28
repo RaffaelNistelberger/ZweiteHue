@@ -19,6 +19,9 @@ public class ZweiteHue {
         HalloJavamitForEach h = new HalloJavamitForEach();
         h.init();
         h.beispiel2();
+
+        NumberTester nt = new NumberTester("test.txt");
+        nt.testFile();
     }
 
 }
