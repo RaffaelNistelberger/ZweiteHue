@@ -16,12 +16,13 @@ public class ZweiteHue {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        HalloJavamitForEach h = new HalloJavamitForEach();
-        h.init();
-        h.beispiel2();
+//        HalloJavamitForEach h = new HalloJavamitForEach();
+//        h.init();
+//        h.beispiel2();
+//
 
+//        nt.testFile();
         NumberTester nt = new NumberTester("test.txt");
-        nt.testFile();
 
         nt.setOddEvenTester((n) -> {
 
@@ -44,9 +45,22 @@ public class ZweiteHue {
 
         });
         nt.setPalindromeTester((n) -> {
+            int r, sum = 0, temp;
 
+            temp = n;
+            while (n > 0) {
+                r = n % 10;
+                sum = (sum * 10) + r;
+                n = n / 10;
+            }
+            if (temp == sum) {
+                return true;
+            } else {
+                return false;
+            }
         });
 
+        nt.testFile();
     }
 
 }

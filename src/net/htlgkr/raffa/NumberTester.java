@@ -45,7 +45,35 @@ public class NumberTester {
             BufferedReader br = new BufferedReader(new FileReader(this.fileName));
             String line = br.readLine();
             while (line != null) {
-                System.out.println(line);
+
+                String[] tmp = line.split(" ");
+                switch (Integer.parseInt(tmp[0])) {
+                    case 1:
+                        if (oddEvenTester.testNumber(Integer.parseInt(tmp[1])) == true) {
+                            System.out.println("EVEN");
+                        } else {
+                            System.out.println("ODD");
+                        }
+                        break;
+                    case 2:
+                        if (primeTester.testNumber(Integer.parseInt(tmp[1])) == true) {
+                            System.out.println("PRIME");
+                        } else {
+                            System.out.println("NO PRIME");
+                        }
+                        break;
+                    case 3:
+                        if (palindromeTester.testNumber(Integer.parseInt(tmp[1])) == true) {
+                            System.out.println("PALINDROME");
+                        } else {
+                            System.out.println("NO PALINDROME");
+                        }
+                        break;
+                    default:
+                        System.out.println("Fehler!");
+                        break;
+                }
+
                 line = br.readLine();
             }
             br.close();
