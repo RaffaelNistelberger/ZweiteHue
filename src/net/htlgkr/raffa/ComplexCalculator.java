@@ -15,6 +15,9 @@ public class ComplexCalculator extends AbstractCalculator {
         super(add, subtract, multiply, divide);
     }
 
+    public ComplexCalculator() {
+    }
+
     @Override
     public Number add(Number a, Number b) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

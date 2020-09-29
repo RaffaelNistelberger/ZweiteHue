@@ -23,6 +23,9 @@ public abstract class AbstractCalculator {
         this.divide = divide;
     }
 
+    public AbstractCalculator() {
+    }
+
     public abstract Number add(Number a, Number b);
 
     public abstract Number subtract(Number a, Number b);
