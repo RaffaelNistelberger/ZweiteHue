@@ -94,6 +94,27 @@ public class ZweiteHue {
             double erg2 = x.getB() * y.getB();
             return new Number(erg1 + erg2, 0);
         });
+
+        ComplexCalculator cc = new ComplexCalculator((Number x, Number y) -> {
+            return new Number(x.getA() + y.getA(), x.getB() + y.getB());
+        }, (Number x, Number y) -> {
+            return new Number(x.getA() - y.getA(), x.getB() - y.getB());
+        }, (Number x, Number y) -> {
+            Number n = new Number(x.getA() * y.getA(), x.getA() * y.getB());
+            Number n2 = new Number(x.getB() * y.getA(), x.getB() * y.getB());
+            return new Number(n.getA() + n2.getB() * (-1), n.getB() + n2.getA());
+        }, (Number x, Number y) -> {
+            Number a = new Number(x.getA() * y.getA(), x.getA() * y.getB() * (-1));
+            Number a2 = new Number(x.getB() * y.getA(), x.getB() * y.getB() * (-1));
+            Number a3 = new Number(a.getA() + a2.getB() * (-1), a.getB() + a2.getA());
+
+            Number e = new Number(y.getA() * y.getA(), y.getA() * y.getB() * (-1));
+            Number e2 = new Number(y.getB() * y.getA(), y.getB() * y.getB() * (-1));
+            Number e3 = new Number(e.getA() * e2.getB() * (-1), 0);
+
+            return new Number(a3.getA() / e3.getA(), a3.getB() / e3.getA());
+        });
+
         Scanner scanner = new Scanner(System.in);
         int eing = 0;
         do {
@@ -107,13 +128,11 @@ public class ZweiteHue {
             if (eing == 4) {
                 break;
             }
-            System.out.println("Bruch 1 eingeben:");
             System.out.println("Zahl 1: x  eingeben:");
             double zahl1x = Integer.parseInt(scanner.nextLine());
             System.out.println("Zahl 1: y eingeben:");
             double zahl1y = Integer.parseInt(scanner.nextLine());
 
-            System.out.println("Bruch 2 eingeben:");
             System.out.println("Zahl 2: x  eingeben:");
             double zahl2x = Integer.parseInt(scanner.nextLine());
             System.out.println("Zahl 2: y eingeben:");
@@ -170,13 +189,20 @@ public class ZweiteHue {
                 case 3:
                     switch (menue()) {
                         case 1:
-                            System.out.println("Hallo");
+                            System.out.println(cc.add(a, b).getA());
+                            System.out.println(cc.add(a, b).getB());
                             break;
                         case 2:
+                            System.out.println(cc.subtract(a, b).getA());
+                            System.out.println(cc.subtract(a, b).getB());
                             break;
                         case 3:
+                            System.out.println(cc.multiply(a, b).getA());
+                            System.out.println(cc.multiply(a, b).getB());
                             break;
                         case 4:
+                            System.out.println(cc.divide(a, b).getA());
+                            System.out.println(cc.divide(a, b).getB());
                             break;
                         case 5:
                             break;
@@ -188,12 +214,6 @@ public class ZweiteHue {
         } while (eing <= 3);
 
     }
-//            if (temp == sum) {
-//                return true;
-//            } else {
-//                return false;
-//            }
-//        });
 
     public static int menue() {
         Scanner scanner = new Scanner(System.in);
